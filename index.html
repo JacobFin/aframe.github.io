@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #33FFFF">
+      <a-assets>
+        <img
+          id="floor"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Ffloor2.jpg?v=1601333382154"
+        />
+        <a-gltf-model
+          id="bottle"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Fsoap.glb?v=1601755008399"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="couch"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Fcouch%20(2).glb?v=1601417970882"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="tv"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Ftv.glb?v=1601418874331"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="stand"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Fstand.glb?v=1601419105110"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="ball"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Fball.glb?v=1601420054759"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="hoop"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Fhoop.glb?v=1601420631881"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="fan"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Ffan.glb?v=1601421547969"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="mask"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Fmask%20(4).glb?v=1601752265072"
+        >
+        </a-gltf-model>
+        <a-gltf-model
+          id="skeleton"
+          src="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2Fskeleton.glb?v=1601430066389"
+        >
+        </a-gltf-model>
+        <a-sound 
+          id ="song"
+          src ="https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2FDOOM%20(mp3cut.net).mp3?v=1601761210674;autoplay: true"
+        >
+        </a-sound>
+      </a-assets>
+      <a-entity gltf-model="#bottle" position="2 0 9" rotation="0 90 0" scale =".005 .005 .005">
+      </a-entity>
+      <a-camera
+        position ="0 1 0">
+                <a-cursor color="#FF0000" />
+      </a-camera>
+      
+      <a-entity
+        gltf-model="#couch"
+        position="-4 0.25 0"
+        scale=".25 .25 .25"
+        rotation="0 90 0"
+      >
+      </a-entity>
+      <a-entity
+        gltf-model="#stand"
+        position="4 0 0"
+        scale="3 3 3"
+        rotation="0 -90 0"
+      >
+      </a-entity>
+      
+      <a-entity
+        gltf-model="#tv"
+        position="4 .75 0"
+        scale=".25 .25 .25"
+        rotation="0 -90 0"
+      >
+      </a-entity>
+      <a-entity gltf-model="#ball" position="0 .15 -8" scale=".20 .2 .2">
+      </a-entity>
+      <a-entity
+        gltf-model="#hoop"
+        position=".5 2 -9.60"
+        scale=".005 .005 .005"
+        rotation="0 -90 0"
+      >
+      </a-entity>
+      <a-entity
+        gltf-model="#fan"
+        position="0 4 0"
+        scale=".01 .01 .01"
+        animation="property: rotation;from: 0 0 0; to: 0 360 0 ; loop: true; dur: 10000"
+      >
+      </a-entity>
+      <a-light type="point" color="#f0f2ed" position="0 2 0" intensity="1">
+      </a-light>
+
+      <a-entity
+        gltf-model="#mask"
+        position="-2.9 -.65 8.9"
+        scale=".0125 .0125 .0125"
+        rotation="0 75 0"
+      >
+      </a-entity>
+      <a-entity
+        gltf-model="#skeleton"
+        position="-3.6 .55 0"
+        scale=".25 .25 .25"
+        rotation="0 90 0"
+      >
+      </a-entity>
+      <a-sphere position ="-20 10 -7" color = "#FC9C54"  light="type: point; intensity: 2; distance: 50; decay: 1">
+      </a-sphere>
+      <a-plane
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="10"
+        height="20"
+        material="src:#floor; repeat: 5 5"
+      >
+      </a-plane>
+      <a-box
+        position="-5.5 2 3"
+        depth="16"
+        width="1"
+        height="4"
+      >
+      </a-box>
+      <a-box position="-5.5 2 -9" depth="5" width="1" height="4"> </a-box>
+      <a-box position="-5.5 1 -5" depth="5" width="1" height="2"> </a-box>
+      <a-box position="-5.5 5 -5" depth="5" width="1" height="2"> </a-box>
+      <a-box position="0 2 -10.5" depth="1" width="10" height="4" shadow>
+      </a-box>
+      <a-box position="5.5 2 -9" depth="5" width="1" height="4"> </a-box>
+      <a-box position="5.5 1 -5" depth="5" width="1" height="2"> </a-box>
+      <a-box position="5.5 5 -5" depth="5" width="1" height="2"> </a-box>
+      <a-box position="0 2 10.5" depth="1" width="10" height="4" shadow></a-box>
+      <a-box position ="5.5 2 3" depth ="15" width="1" height="4"></a-box>
+      <a-box position="0 4 0" depth="20" width="10" height=".5"> </a-box>
+      <a-box depth=".5" width=".5" height="2" position="4 0 2 " color = "black" sound = "src: https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2FDOOM%20(mp3cut.net).mp3?v=1601761210674; on:click" >
+      </a-box>
+      <a-box depth=".5" width=".5" height="2" position="4 0 -2 " color = "black" sound = "src: https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2FDOOM%20(mp3cut.net).mp3?v=1601761210674; on:click"> 
+      <a-event name="mouseenter" sound = "src: https://cdn.glitch.com/1ffc88f1-88b9-43fa-8d37-582ae4d48d43%2FDOOM%20(mp3cut.net).mp3?v=1601761210674"></a-event>
+      </a-box>
+      <a-circle position = "3.75 .5 2" color="white" radius=".25" rotation = "0 -90 0"></a-circle>
+      <a-circle position = "3.75 .5 -2" color="white" radius=".25" rotation = "0 -90 0"></a-circle>
+
+      <a-cylinder height="3.5" radius=".0525" color="brown" position="-3 0 9">
+      </a-cylinder>
+      <a-cylinder
+        height=".25"
+        radius=".0325"
+        position="-3 1.5 9.125"
+        rotation="70 0 0"
+        color="brown"
+      >
+      </a-cylinder>
+      <a-cylinder
+        height=".25"
+        radius=".0325"
+        position="-3 1.5 8.875"
+        rotation="-70 0 0"
+        color="brown"
+      >
+      </a-cylinder>
+      <a-cylinder
+        height=".25"
+        radius=".0325"
+        position="-3.125 1.5 9"
+        rotation="0 0 -120"
+        color="brown"
+      >
+      </a-cylinder>
+      <a-cylinder
+        height=".25"
+        radius=".0325"
+        position="-2.875 1.5 9"
+        rotation="0 0 120"
+        color="brown"
+      >
+      </a-cylinder>
+    </a-scene>
+  </body>
+</html>
